@@ -27,6 +27,11 @@ public class ContactoControlador {
         contactos.forEach((contacto) -> logger.info(contacto.toString()));
         modelo.put("contactos", contactos);
         return "index";//index.html
-
     }
+
+    @GetMapping("/agregar")
+    public String mostrarAgregar(){
+        return "agregar";//Redirecciona a la pagina agregar.html
+    }
+
 }
