@@ -55,4 +55,11 @@ public class ContactoControlador {
         return "editar"; //editar.html
     }
 
+    @PostMapping("/editar")
+    public String editar(@ModelAttribute("contacto") Contacto contacto){
+        logger.info("Contacto a guardar (editar): " + contacto);
+        contactoServicio.guardarContacto(contacto);
+        return "redirect:/";//redirigimos al controlador path "/"
+    }
+
 }
