@@ -62,4 +62,12 @@ public class ContactoControlador {
         return "redirect:/";//redirigimos al controlador path "/"
     }
 
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable(value = "id") int idContacto){
+        Contacto contacto = new Contacto();
+        contacto.setIdContacto(idContacto);
+        contactoServicio.eliminarContacto(contacto);
+        return "redirect:/"; // redireccionamiento al path de inicio "/"
+    }
+
 }
